@@ -1,0 +1,41 @@
+{
+  "defaultSettings": {
+    "label" : "category",
+    "value": "value",
+    "limit": "20"
+  },
+  "sampleData": [ 
+    {"country":"USA","category":"B","os_flow":3551,"ow_flow":2608,"pv":1953,"ss":998,"uu":730,"value":110,"node_id":"000008889","created":1512603888941},
+    {"country":"CN","category":"B","os_flow":3551,"ow_flow":2608,"pv":1953,"ss":998,"uu":730,"value":110,"node_id":"000008889","created":1512603888941},
+    {"country":"JP","category":"B","os_flow":3551,"ow_flow":2608,"pv":1953,"ss":998,"uu":730,"value":90,"node_id":"000008889","created":1512603888941},
+    {"country":"CN","category":"B","os_flow":880,"ow_flow":830,"pv":47,"ss":272,"uu":410,"value":200,"node_id":"000008887","created":1512603888795},
+    {"country":"USA","category":"B","os_flow":880,"ow_flow":830,"pv":47,"ss":272,"uu":410,"value":205,"node_id":"000008887","created":1512603888795},
+    {"country":"JP","category":"B","os_flow":880,"ow_flow":830,"pv":47,"ss":272,"uu":410,"value":205,"node_id":"000008887","created":1512603888795},
+    {"country":"CN","category":"B","os_flow":2450,"ow_flow":947,"pv":1840,"ss":30,"uu":565,"value":10,"node_id":"000008886","created":1512603888641},
+    {"country":"USA","category":"B","os_flow":2450,"ow_flow":947,"pv":1840,"ss":30,"uu":565,"value":10,"node_id":"000008886","created":1512603888641},
+    {"country":"CN","category":"B","os_flow":670,"ow_flow":180,"pv":49,"ss":1914,"uu":1506,"value":1,"node_id":"000008884","created":1512603888493},
+    {"country":"JP","category":"B","os_flow":1857,"ow_flow":1620,"pv":1573,"ss":295,"uu":1458,"value":101,"node_id":"000008882","created":1512603888287},
+    {"country":"CN","category":"B","os_flow":3054,"ow_flow":2998,"pv":261,"ss":784,"uu":1314,"value":122,"node_id":"000008881","created":1512603888117},
+    {"country":"JP","category":"B","os_flow":4477,"ow_flow":1238,"pv":1155,"ss":120,"uu":1018,"value":120,"node_id":"000008879","created":1512603887968},
+    {"country":"CN","category":"B","os_flow":2110,"ow_flow":1260,"pv":15,"ss":769,"uu":1213,"value":140,"node_id":"000008876","created":1512603887650},
+    {"country":"JP","category":"A","os_flow":646,"ow_flow":2576,"pv":219,"ss":360,"uu":1579,"value":150,"node_id":"000008873","created":1512603887307},
+    {"country":"CN","category":"A","os_flow":1197,"ow_flow":2815,"pv":1736,"ss":879,"uu":725,"value":160,"node_id":"000008871","created":1512603887112},
+    {"country":"USA","category":"B","os_flow":592,"ow_flow":836,"pv":1391,"ss":1932,"uu":1342,"value":170,"node_id":"000008868","created":1512603886820},
+    {"country":"CN","category":"A","os_flow":1000,"ow_flow":593,"pv":1143,"ss":1255,"uu":450,"value":180,"node_id":"000008867","created":1512603886771},
+    {"country":"JP","category":"B","os_flow":3327,"ow_flow":1773,"pv":1928,"ss":1622,"uu":343,"value":150,"node_id":"000008865","created":1512603886511},
+    {"country":"USA","category":"A","os_flow":165,"ow_flow":1560,"pv":1116,"ss":1070,"uu":1352,"value":140,"node_id":"000008862","created":1512603886266},
+    {"country":"JP","category":"A","os_flow":5235,"ow_flow":614,"pv":1922,"ss":981,"uu":1168,"value":130,"node_id":"000008860","created":1512603886053},
+    {"country":"USA","category":"B","os_flow":75,"ow_flow":1677,"pv":1505,"ss":111,"uu":787,"value":160,"node_id":"000008860","created":1512603886017},
+    {"country":"USA","category":"B","os_flow":4763,"ow_flow":1127,"pv":1549,"ss":1670,"uu":788,"value":170,"node_id":"000008857","created":1512603885721},
+    {"country":"CN","category":"B","os_flow":4763,"ow_flow":1127,"pv":1549,"ss":1670,"uu":788,"value":150,"node_id":"000008857","created":1512603885721},
+    {"country":"JP","category":"B","os_flow":4763,"ow_flow":1127,"pv":1549,"ss":1670,"uu":788,"value":155,"node_id":"000008857","created":1512603885721}
+  ],
+  "settingSchema":[
+        {
+        "type" : "key", "name" : "label", "help" : "Please specify the key of the data to be the label."
+      },{
+        "type" : "key", "name" : "value", "help" : "Please specify the key of the data representing the value."
+      },{
+            "type": "select", "name": "limit", "help": "The number of data to be displayed", "options": ["1"]
+        } ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "single-linechart",
+  "version": "1.0.0",
+  "description": "single-linechart",
+  "main": "",
+  "dependencies": {
+    "smoothie": "^1.35.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@uhuru/enebular-infomotion-tool-v2": "^1.0.0-alpha.24"
+  },
+  "scripts": {
+    "build": "babel plugin.es6 -o plugin.js && eit package .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
