@@ -1,6 +1,6 @@
 import * as smoothie from 'smoothie';
 
-export default class LineChart2 {
+export default class Electrocardiogram {
   constructor(settings, options) {
     this.pulseWidth = 200;
     this.pulse = [
@@ -132,14 +132,14 @@ export default class LineChart2 {
   }
 }
 
-LineChart2.defaultSettings = {
+Electrocardiogram.defaultSettings = {
     "label" : "Person",
     "value": "heartRate",
     "limit": "1",
     "speed": "normal"
 };
 
-LineChart2.settings = EnebularIntelligence.SchemaProcessor(
+Electrocardiogram.settings = EnebularIntelligence.SchemaProcessor(
   [
     {
       type : 'key',
@@ -166,6 +166,6 @@ LineChart2.settings = EnebularIntelligence.SchemaProcessor(
         '1'
       ]
     }
-  ], LineChart2.defaultSettings); 
+  ], Electrocardiogram.defaultSettings); 
 
-window.EnebularIntelligence.register('linechart', LineChart2);
+window.EnebularIntelligence.register('linechart', Electrocardiogram);
