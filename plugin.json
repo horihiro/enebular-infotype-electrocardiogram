@@ -17,6 +17,15 @@
       "name" : "value",
       "help" : "Please specify the key of the data representing the value."
     },{
+      "type" : "key",
+      "name" : "speed",
+      "help" : "Please specify the key of the data representing the value.",
+      "options": [
+        "slow",
+        "normal",
+        "fast"
+      ]
+    },{
       "type": "select",
       "name": "limit",
       "help": "The number of data to be displayed",
