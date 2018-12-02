@@ -1,7 +1,7 @@
 {
-  "name": "single-linechart",
+  "name": "enebular-infotype-electrocardiogram",
   "version": "1.0.0",
-  "description": "single-linechart",
+  "description": "draw electrocardiogram on enebular infomotion",
   "main": "",
   "dependencies": {
     "smoothie": "^1.35.0"
