@@ -48,14 +48,24 @@ export default class LineChart2 {
     this.el.appendChild(this.divEl);
 
     this.settings = settings;
+    switch(this.settings.speed) {
+      case 'fast':
+      this.millisPerPixel = 3;
+      break;
+      case 'slow':
+      this.millisPerPixel = 10;
+      break;
+      default:
+      this.millisPerPixel = 5;
+    }
     this.options = options;
     this.data = [];
 
-    this.canvasEl.width = this.width = options.width || 700;
-    this.canvasEl.height = this.height = (options.height || 500) - 50;
+    this.canvasEl.style.width = this.width = options.width || 700;
+    this.canvasEl.style.height = this.height = (options.height || 500) - 10;
 
     this.sm = new smoothie.SmoothieChart({
-      millisPerPixel:4,
+      millisPerPixel:this.millisPerPixel,
       grid: {
         strokeStyle:'rgb(0, 120, 0)',
         fillStyle:'rgb(0, 50, 0)',
@@ -66,13 +76,13 @@ export default class LineChart2 {
       maxValue: 1.5,
       minValue: -0.5
     });
-    this.sm.streamTo(this.canvasEl, this.pulseWidth);
+    this.sm.streamTo(this.canvasEl, 1000);
 
     this.line = new smoothie.TimeSeries();
     this.sm.addTimeSeries(this.line, {lineWidth:2,strokeStyle:'#00ff00'});
     setInterval(() => {
       if(!this.isPulsing) this.line.append(Date.now(), 0);
-    }, 50);
+    }, 1000);
   }
 
   drawPulse() {
@@ -96,8 +106,7 @@ export default class LineChart2 {
   }
 
   addData (data) {
-    console.log(data[0][this.settings.value]);
-    this.divEl.innerText = this.heartRate = data[0][this.settings.value];
+    this.divEl.innerText = this.heartRate = data[0][this.settings.value] || 0;
     if (this.heartRate && !this.drawingPulse) {
       this.drawingPulse = setTimeout(() => {
         this.drawPulse();
@@ -112,7 +121,7 @@ export default class LineChart2 {
   resize (options) {　
     // just resizing canvas.
     this.canvasEl.width = this.width = options.width;
-    this.canvasEl.height = this.height = options.height - 50;
+    this.canvasEl.height = this.height = options.height - 10;
   }
 
   getEl() {
@@ -121,19 +130,39 @@ export default class LineChart2 {
 }
 
 LineChart2.defaultSettings = {
-    "label" : "country",
-    "value": "value",
-    "limit": "10"
+    "label" : "Person",
+    "value": "heartRate",
+    "limit": "1",
+    "speed": "normal"
 };
 
-LineChart2.settings = EnebularIntelligence.SchemaProcessor([
-  {
-    type : "key", name : "label", help : "Please specify the key of the data to be the label."
-  },{
-    type : "key", name : "value", help : "Please specify the key of the data representing the value."
-  },{
-    type: "select", name: "limit", help: "The number of data to be displayed", options: ["10","20","30","all"]
-  } 
-], LineChart2.defaultSettings); 
+LineChart2.settings = EnebularIntelligence.SchemaProcessor(
+  [
+    {
+      type : 'key',
+      name : 'label',
+      help : 'Please specify the key of the data to be the label.'
+    },{
+      type : 'key',
+      name : 'value',
+      help : 'Please specify the key of the data representing the value.'
+    },{
+      type : 'select',
+      name : 'speed',
+      help : 'Please specify the key of the data representing the value.',
+      options: [
+        'slow',
+        'normal',
+        'fast'
+      ]
+    },{
+      type: 'select',
+      name: 'limit',
+      help: 'The number of data to be displayed',
+      options: [
+        '1'
+      ]
+    }
+  ], LineChart2.defaultSettings); 
 
 window.EnebularIntelligence.register('linechart', LineChart2);
