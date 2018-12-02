@@ -2,7 +2,7 @@
   "name": "enebular-infotype-electrocardiogram",
   "version": "1.0.0",
   "description": "draw electrocardiogram on enebular infomotion",
-  "main": "",
+  "main": "plugin.js",
   "dependencies": {
     "smoothie": "^1.35.0"
   },
@@ -15,6 +15,6 @@
     "debug": "eit run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "horihiro",
   "license": "ISC"
 }
