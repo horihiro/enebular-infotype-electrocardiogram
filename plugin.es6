@@ -40,10 +40,13 @@ export default class LineChart2 {
       }
     ];
 
+    this.styleEl = window.document.createElement('style');
+    this.styleEl.innerText = "body{margin:0}";
     this.canvasEl = window.document.createElement('canvas');
     this.divEl = window.document.createElement('div');
     this.divEl.className = "dispHeartRate";
     this.el = window.document.createElement('div');
+    this.el.appendChild(this.styleEl);
     this.el.appendChild(this.canvasEl);
     this.el.appendChild(this.divEl);
 
