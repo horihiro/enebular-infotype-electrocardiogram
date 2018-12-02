@@ -7,10 +7,7 @@
     "smoothie": "^1.35.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "@uhuru/enebular-infomotion-tool-v2": "^1.0.0-alpha.24",
+    "@uhuru/enebular-infomotion-tool-v2": "^1.0.0-alpha.25",
     "event-stream": "^3.3.4"
   },
   "scripts": {
