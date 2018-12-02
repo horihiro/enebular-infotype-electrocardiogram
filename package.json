@@ -11,7 +11,7 @@
     "event-stream": "^3.3.4"
   },
   "scripts": {
-    "build": "babel plugin.es6 -o plugin.js && eit package .",
+    "build": "eit package .",
     "debug": "eit run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
