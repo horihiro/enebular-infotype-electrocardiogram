@@ -1,37 +1,10 @@
 {
   "defaultSettings": {
-    "label" : "category",
-    "value": "value",
+    "value": "heartRate",
+    "speed": "slow",
     "limit": "1"
   },
   "sampleData": [ 
-    {"heartRate":70,"created":1512603888941}
-  ],
-  "settingSchema":[
-    {
-      "type" : "key",
-      "name" : "label",
-      "help" : "Please specify the key of the data to be the label."
-    },{
-      "type" : "key",
-      "name" : "value",
-      "help" : "Please specify the key of the data representing the value."
-    },{
-      "type" : "key",
-      "name" : "speed",
-      "help" : "Please specify the key of the data representing the value.",
-      "options": [
-        "slow",
-        "normal",
-        "fast"
-      ]
-    },{
-      "type": "select",
-      "name": "limit",
-      "help": "The number of data to be displayed",
-      "options": [
-        "1"
-      ]
-    }
+    {"heartRate":70}
   ]
 }

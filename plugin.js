@@ -55,11 +55,11 @@ export default class Electrocardiogram {
       case 'fast':
       this.millisPerPixel = 3;
       break;
-      case 'slow':
-      this.millisPerPixel = 10;
+      case 'middle':
+      this.millisPerPixel = 5;
       break;
       default:
-      this.millisPerPixel = 5;
+      this.millisPerPixel = 10;
     }
     this.options = options;
     this.data = [];
@@ -130,42 +130,30 @@ export default class Electrocardiogram {
   getEl() {
     return this.el;
   }
-}
 
-Electrocardiogram.defaultSettings = {
-    "label" : "Person",
-    "value": "heartRate",
-    "limit": "1",
-    "speed": "normal"
-};
+  static get defaultSettings() {
+    return {
+      value: 'heartRate',
+      speed: 'slow'
+    };
+  }
 
-Electrocardiogram.settings = EnebularIntelligence.SchemaProcessor(
-  [
-    {
-      type : 'key',
-      name : 'label',
-      help : 'Please specify the key of the data to be the label.'
-    },{
+  static get settings() {
+    return EnebularIntelligence.SchemaProcessor([{
       type : 'key',
       name : 'value',
-      help : 'Please specify the key of the data representing the value.'
+      help : 'Please specify the key of the haeat rate data.'
     },{
       type : 'select',
       name : 'speed',
-      help : 'Please specify the key of the data representing the value.',
+      help : 'Please select speed of this electrocardiogram.',
       options: [
         'slow',
-        'normal',
+        'middle',
         'fast'
       ]
-    },{
-      type: 'select',
-      name: 'limit',
-      help: 'The number of data to be displayed',
-      options: [
-        '1'
-      ]
-    }
-  ], Electrocardiogram.defaultSettings); 
+    }], Electrocardiogram.defaultSettings); 
+  };
+}
 
 window.EnebularIntelligence.register('linechart', Electrocardiogram);
